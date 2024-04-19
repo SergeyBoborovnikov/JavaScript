@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="shortcut icon" href="./img/js.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <img src="./img/js.png" width="50px" height="50px" alt="" class="img-logo">
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#!" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#!" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#!" class="nav-link">What</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#!" class="nav-link">What</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="register-buttons">
+                    <button id="open-modal-btn" class="register">Зарегистрироваться</button>
+                    <!-- <button id="open-modal-btn" class="login">Войти</button> -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- К каждой форме добавил атрибут required, без него не сработает -->
+    <article class="popup" id="modalPopup">
+        <form class="modal-form">
+            <button id="close-modal-btn" type="button"><img class="close-btn" src="./img/icons8-закрыть-окно-50.png" alt="Закрыть"></button>
+            <h2 class="name-block">Регистрация</h2>
+            <div class="modalName">
+                <input type="text" id="modal-name" required>
+                <label class="placeholder" for="modal-name">Введите имя:</label>
+            </div>
+            <div class="modalEmail">
+                <input type="email" id="modal-email" required>
+                <label class="placeholder" for="modal-email">Введите email:</label>
+            </div>
+            <div class="modalPassword">
+                <input type="password" id="modal-password" required>
+                <label class="placeholder" for="modal-password">Введите пароль:</label>
+            </div>
+            <div class="modalSubmit">
+                <input class="modal-butt" type="submit" value="Зарегистрироваться">
+            </div>
+        </form>
+    </article>
+
+
+
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

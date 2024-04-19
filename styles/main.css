@@ -1,0 +1,208 @@
+@import url(./reset.css);
+
+body {
+    font-family: sans-serif;
+    background-color: rgb(29, 29, 29);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 20px 0;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img-logo {
+    border-radius: 10px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-link {
+    color: rgb(223, 190, 146);
+    font-size: 18px;
+
+    transition: color .3s ease;
+}
+
+.nav-link:hover {
+    color: wheat;
+}
+
+.register-buttons {
+    display: flex;
+    gap: 40px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+.login,
+.register {
+    background-color: yellowgreen !important;
+    padding: 10px 25px !important;
+    border-radius: 10px !important;
+
+    transition: all .3s ease !important;
+}
+
+.login:hover,
+.register:hover {
+    background-color: rgb(0, 0, 0) !important;
+    color: antiquewhite !important;
+}
+
+/* POPUP WINDOW================================================================================================================ */
+
+/* Стиль кнопки открытия окна */
+#open-modal-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Стиль кнопки закрытия окна */
+#close-modal-btn {
+    display: flex;
+    position: relative;
+    margin-bottom: -20px;
+    left: 80%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Размер кнопок */
+.user,
+.close-btn {
+    width: 50px;
+}
+
+/* Задаю стиль окна, а также анимации окна */
+.popup {
+    display: grid;
+    position: fixed;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    width: 300px;
+    height: 300px;
+    background-color: rgba(231, 226, 226, 0.9);
+    border: 2px solid #282c34;
+    border-radius: 5%;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity .4s, visibility .4s;
+}
+
+.modal-form {
+    transform: scale(0);
+    transition: transform .8s;
+}
+
+.popup.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup.open .modal-form {
+    transform: scale(1);
+}
+
+/* Центрирую заголовок */
+.name-block {
+    text-align: center;
+}
+
+/* Стиль кнопки "Зарегистрироваться" */
+.modal-butt {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    background: #282c34;
+    color: #bbbbbb;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Raleway', sans-serif;
+    max-width: 200px;
+    cursor: pointer;
+}
+
+/* Расположение названий форм */
+.modal-form label {
+    position: relative;
+    left: 10%;
+}
+
+/* Отступы между инпутами */
+.modalName,
+.modalEmail,
+.modalPassword,
+.modalSubmit {
+    margin-top: 30px;
+}
+
+/* Задаю стиль формам и даю тайминг изменения нижнего бордера */
+#modal-name,
+#modal-email,
+#modal-password {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    background-color: transparent;
+    padding: 2px 0;
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    border-bottom: 2px solid #282c34;
+    transition: border-color .3s;
+}
+
+/* Изменение бордера при нажатии на форму */
+#modal-name:focus,
+#modal-email:focus,
+#modal-password:focus {
+    border-color: #ed5a6b;
+}
+
+/* Задаю стиль лейблам, а также тайминги анимации */
+.placeholder {
+    display: block;
+    position: absolute;
+    left: 0;
+    color: #282c34;
+    pointer-events: none;
+    transition: transform .3s, color .3s, top .3s;
+}
+
+/* Здесь я делаю так, чтобы при наличии текста в неактивной форме, не изменялся лейбл */
+#modal-name:focus+.placeholder,
+#modal-name:not(:focus):valid+.placeholder {
+    top: -20px;
+    color: #ed5a6b;
+}
+
+#modal-email:focus+.placeholder,
+#modal-email:not(:focus):valid+.placeholder {
+    top: -20px;
+    color: #ed5a6b;
+}
+
+#modal-password:focus+.placeholder,
+#modal-password:not(:focus):valid+.placeholder {
+    top: -20px;
+    color: #ed5a6b;
+}
